@@ -1,0 +1,42 @@
+.section {
+  position: relative;
+  width: 70%;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 60px 0 30px 0;
+
+  @media screen and (max-width: 550px) {
+    width: 85%
+  }
+
+  .heading-text {
+    margin: 0 0 4px 0;
+    color: rgba($color: #ffffff, $alpha: 0.87);
+    font-size: 1.8rem;
+  }
+  
+  .heading-underline {
+    height: 4px;
+    border-radius: 4px;
+    margin:0 0 30px 0;
+  }
+
+  .white-text {
+    color: rgba($color: #ffffff, $alpha: 0.87);
+  }
+
+  .grey-text {
+    color: rgba($color: #ffffff, $alpha: 0.6);
+  }
+
+  .paragraph {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .paragraph-s {
+    font-size: 1rem;
+    margin: 0;
+  }
+}
