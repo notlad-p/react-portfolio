@@ -109,6 +109,9 @@ export default function Navbar() {
     opacity: 1,
     transform: 'translateX(0)',
     from: { opacity: 0, transform: 'translateX(-25px)' },
+    config: {
+      tension: 250,
+    },
   });
 
   useChain([loadRef, iconRef]);
