@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSpring, animated, useTrail, useChain, useSprings } from 'react-spring';
-import dpLogo from '../assets/dp-logo-white.png';
 import { House, User, Code, Envelope } from 'phosphor-react';
 import { Link } from 'react-scroll';
 
@@ -43,10 +42,12 @@ export default function Navbar() {
     to: async (next) => {
       await next({width: '75px'});
       await next({height: '60px'});
+      await next({opacity: 1})
     },
     from: {
       height: '0px',
       width: '0px',
+      opacity: 0,
     },
     delay: 4500,
     config: {
@@ -180,18 +181,10 @@ export default function Navbar() {
         width: width < 800 ? '100%' : loadSpring.width,
       }}
     >
-      {/* <Link
-        to='header'
-        smooth={true}
-      >
-        <img src={dpLogo} alt='navbar logo' className='navbar-logo' />
-      </Link> */}
-
       <animated.div 
         className='navbar-btns' 
         style={{
           transform: width < 800 ? menuProps.menuLeft : 'translate3d(0, 0, 0)',
-          //opacity: loadSpring.opacity,
         }}
       >
         {iconTrail.map((trail, index) => (
@@ -215,7 +208,7 @@ export default function Navbar() {
         className='hamburger' 
         onClick={() => setMenu((state) => !state)}
         style={{
-          opacity: loadSpring.o1,
+          opacity: loadSpring.opacity,
         }}
       >
         {hamTrail.map((animation, index) => (
