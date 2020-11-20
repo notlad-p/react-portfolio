@@ -35,7 +35,7 @@ export default function Contact() {
       >
         <div>
           <Heading 
-            text='Contact Me'
+            text='Contact'
             color='#007ACC'
             width='120px'
           />
