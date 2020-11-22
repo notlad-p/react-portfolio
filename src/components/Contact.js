@@ -1,28 +1,27 @@
 import React, { useState } from 'react';
-import { useSpring, animated } from 'react-spring';
+import emailjs from 'emailjs-com';
 import Heading from './Heading';
 import Input from './Input';
+import Textarea from './Textarea';
 import Button from './Button';
 
 export default function Contact() {
-  const [input, setInput] = useState('');
-  const [name, setName] = useState(false);
+  const [submit, setSubmit] = useState(false);
 
-  const inputSpring = useSpring({
-    top: name ? '2px' : '22px',
-    fontSize: name ? '12px' : '16px',
-    color: name ? '#29c7ac' : 'rgba(255, 255, 255, 0.6)',
-    config: {
-      tension: 200, 
-      friction: 10,
-      clamp: true,
-    }
-  })
+  const sendEmail = (e) => {
+    e.preventDefault();
+     emailjs.sendForm('service_aownkr4', 'template_kx4erxx', e.target, process.env.REACT_APP_EMAILJS_ID)
+       .then((result) => {
+         console.log(result.text);
+       }, (error) => {
+         console.log(error.text);
+       });
+      e.target.reset();
 
-  const onInputBlur = () => {
-    if(input === '') {
-      setName(false)
-    }
+      setSubmit(true);
+      setTimeout(() => {
+        setSubmit(false);
+      }, 1000);
   }
 
   return (
@@ -66,30 +65,11 @@ export default function Contact() {
       </div>
       <form
         className='contact-form'
+        onSubmit={sendEmail}
       >
-        <Input label='Name' id='name' type='text' />
-        <Input label='Email' id='email' type='email' />
-        <div>
-          <animated.label
-            className='white-text contact-form-label'
-            htmlFor='message'
-            style={inputSpring}
-          >Message</animated.label>
-          <textarea
-            name='message'
-            id='message'
-            required
-            className='white-text contact-form-theme contact-form-textarea'
-            onFocus={() => setName(true)}
-            onBlur={onInputBlur}
-            onInput={(e) => setInput(e.target.value)}
-          ></textarea>
-          <span
-            style={{
-              bottom: /Chrome|Safari/i.test(navigator.userAgent) ? '4px' : '0px'
-            }}
-          ></span>
-        </div>
+        <Input label='Name' id='name' type='text' submit={submit} />
+        <Input label='Email' id='email' type='email' submit={submit} />
+        <Textarea submit={submit} />
         <Button
           text='Submit'
           type='submit'

@@ -1,26 +1,13 @@
-import React, { useState } from 'react';
-import { useSpring, animated } from 'react-spring'
+import React, { useEffect } from 'react';
+import { animated } from 'react-spring';
+import useInputAnimation from '../hooks/useInputAnimation';
 
-export default function Input({ label, id, type }) {
-  const [input, setInput] = useState('');
-  const [name, setName] = useState(false);
+export default function Input({ label, id, type, submit }) {
+  const { spring, onFocus, onInput, onInputBlur, onSubmit } = useInputAnimation();
 
-  const spring = useSpring({
-    top: name ? '2px' : '20px',
-    fontSize: name ? '12px' : '16px',
-    color: name ? '#29c7ac' : 'rgba(255, 255, 255, 0.6)',
-    config: {
-      tension: 200, 
-      friction: 10,
-      clamp: true,
-    }
-  })
-
-  const onInputBlur = () => {
-    if(input === '') {
-      setName(false)
-    }
-  }
+  useEffect(() => {
+    if(submit) onSubmit();
+  }, [submit, onSubmit]);
 
   return (
     <>
@@ -31,9 +18,9 @@ export default function Input({ label, id, type }) {
           style={spring}
         >{label}</animated.label>
         <input 
-          onFocus={() => setName(true)}
+          onFocus={onFocus}
           onBlur={onInputBlur}
-          onInput={(e) => setInput(e.target.value)}
+          onInput={onInput}
           name={id} 
           id={id}
           type={type}
