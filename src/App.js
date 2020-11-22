@@ -10,6 +10,12 @@ import Footer from './components/Footer';
 
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
+let isStandalone = false;
+
+if (window.matchMedia('(display-mode: standalone)').matches) {
+  isStandalone = true;
+}
+
 function App() {
   return (
     <div 
@@ -19,7 +25,7 @@ function App() {
       <div 
         className='push'
         style={{
-          height: isMobile ? '85vh' : '100vh'
+          height: !isMobile || isStandalone ? '100vh' : '85vh'
         }}
        ></div>
       <About />
