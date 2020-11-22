@@ -68,12 +68,9 @@ const Project = ({ name, description, tech, githubLink, projectLink, title, imag
             onClick={toggle}
           >
             <img 
+              className='project-footer-github-icon'
               src={githubIcon}
               alt='github link'
-              style={{
-                width: '28px',
-                marginLeft: '10px'
-              }}
             />
           </a>
         </div>
@@ -113,7 +110,7 @@ const projectData = [
   {
     id: 4,
     name: 'iPhone Calculator Clone', 
-    description: 'An iPhone calculator clone with current time', 
+    description: 'An iPhone calculator clone built in vanilla JavaScript.', 
     image: iphoneCalc,
     tech: ['JavaScript', 'CSS', 'HTML',], 
     githubLink: 'https://github.com/notlad-p/iphone-calculator', 

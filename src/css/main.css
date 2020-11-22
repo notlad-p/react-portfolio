@@ -288,6 +288,10 @@
   box-shadow: 0 0 0 2px #4f4e4d;
   border-radius: 5px;
 }
+.project-footer-github-icon {
+  width: 28px;
+  margin-left: 10px;
+}
 .project-modal {
   position: fixed;
   top: 0;
