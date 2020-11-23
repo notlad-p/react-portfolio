@@ -19,6 +19,8 @@ export default function About() {
       </p>
       <Button 
         text='Resume'
+        link
+        href='#'
       />
     </div>
   )

@@ -5,7 +5,7 @@ import { Link } from 'phosphor-react'
 import githubIcon from '../assets/icons/github-white.png';
 import Button from './Button';
 
-const ProjectModal = ({ isShowing, hide, name, image }) => {
+const ProjectModal = ({ isShowing, hide, name, image, projectLink, githubLink }) => {
   const [render, setRender] = useState(isShowing);
 
   const onAnimationEnd = () => {
@@ -56,6 +56,8 @@ const ProjectModal = ({ isShowing, hide, name, image }) => {
             <div className='project-modal-btns' >
               <Button 
                 text='Live Project'
+                link
+                href={projectLink}
                 icon={<Link
                   size='20px'
                   color='#ffffff'
@@ -66,6 +68,8 @@ const ProjectModal = ({ isShowing, hide, name, image }) => {
               />
               <Button 
                 text='GitHub'
+                link
+                href={githubLink}
                 icon={
                   <img 
                     src={githubIcon}

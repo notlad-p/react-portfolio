@@ -25,6 +25,8 @@ const Project = ({ name, description, tech, githubLink, projectLink, title, imag
         hide={toggle}
         name={name}
         image={image}
+        githubLink={githubLink}
+        projectLink={projectLink}
       />
       <div>
         <p 

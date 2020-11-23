@@ -17,7 +17,7 @@ export default function Contact() {
          console.log(error.text);
        });
       e.target.reset();
-
+      
       setSubmit(true);
       setTimeout(() => {
         setSubmit(false);
