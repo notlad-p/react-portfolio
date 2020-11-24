@@ -3,7 +3,7 @@ import { animated } from 'react-spring';
 import useInputAnimation from '../hooks/useInputAnimation';
 
 export default function Textarea({ submit }) {
-  const { spring, onFocus, onInput, onInputBlur, onSubmit } = useInputAnimation();
+  const { spring, onFocus, onInput, input, onInputBlur, onSubmit } = useInputAnimation();
 
   useEffect(() => {
     if(submit) onSubmit();
@@ -23,8 +23,9 @@ export default function Textarea({ submit }) {
         className='white-text contact-form-theme contact-form-textarea'
         onFocus={onFocus}
         onBlur={onInputBlur}
-        onInput={onInput}
-      ></textarea>
+        onChange={onInput}
+        value={input}
+      />
       <span
         style={{
           bottom: /Chrome|Safari/i.test(navigator.userAgent) ? '4px' : '0px'

@@ -13,31 +13,31 @@ export default function Contact() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-      emailjs.sendForm('service_aownkr4', 'template_kx4erxx', e.target, process.env.REACT_APP_EMAILJS_ID)
-        .then((result) => {
-          console.log(result.status);
-          if (result.status === 200) {
-            setResult(true);
-            setSubmit(true);
-          } 
-        }, (error) => {
-          console.log(error);
-          if (error.status === 400) {
-            setResult(false);
-            setSubmit(true);
-          }
-        });
-      e.target.reset();
+    emailjs.sendForm('service_aownkr4', 'template_kx4erxx', e.target, process.env.REACT_APP_EMAILJS_ID)
+      .then((result) => {
+        console.log(result.status);
+        if (result.status === 200) {
+          setResult(true);
+          setSubmit(true);
+        } 
+      }, (error) => {
+        console.log(error);
+        if (error.status === 400) {
+          setResult(false);
+          setSubmit(true);
+        }
+      });
   
-      setTimeout(() => {
-        setSubmit(false);
-      }, 2000);
+    setTimeout(() => {
+      setSubmit(false);
+    }, 2000);
+    //process.env.REACT_APP_EMAILJS_ID
   }
 
   const transition = useTransition(submit, null, {
     from: {
       opacity: 0,
-      transform: 'translate3d(0px, 100px, 0)',
+      transform: 'translate3d(0px, 80px, 0)',
     },
     enter: {
       opacity: 1,
@@ -45,7 +45,7 @@ export default function Contact() {
     },
     leave: {
       opacity: 0,
-      transform: 'translate3d(-100px, 0, 0)',
+      transform: 'translate3d(-80px, 0, 0)',
     }
   })
 
@@ -67,7 +67,7 @@ export default function Contact() {
         <div className='email-container' >
           <a
             className='email-link'
-            href='mailto:daperkins123@gmail.com'
+            href='mailto:contact@daltonp.dev'
           >
             <h3 
               className='grey-text' 
@@ -75,7 +75,7 @@ export default function Contact() {
                 margin: '15px 0 4px 0'
               }}
             >
-              contact@daltonp.com
+              contact@daltonp.dev
             </h3>
             <div
               style={{
@@ -92,9 +92,9 @@ export default function Contact() {
         className='contact-form'
         onSubmit={sendEmail}
       >
-        <Input label='Name' id='name' type='text' submit={submit} />
-        <Input label='Email' id='email' type='email' submit={submit} />
-        <Textarea submit={submit} />
+        <Input label='Name' id='name' type='text' submit={result} />
+        <Input label='Email' id='email' type='email' submit={result} />
+        <Textarea submit={result} />
         <Button
           text='Submit'
           type='submit'

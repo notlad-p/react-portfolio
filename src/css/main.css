@@ -476,11 +476,17 @@
 .contact-form-input {
   height: 60px;
 }
+.contact-form-input:invalid {
+  box-shadow: none;
+}
 .contact-form-textarea {
   height: 160px;
   padding-top: 20px;
   padding-right: 20px;
   resize: vertical;
+}
+.contact-form-textarea:invalid {
+  box-shadow: none;
 }
 .contact-form input:-webkit-autofill,
 .contact-form input:-webkit-autofill:hover,
@@ -496,14 +502,14 @@
 }
 
 .submit-notification {
-  position: fixed;
-  bottom: 100px;
+  position: absolute;
+  bottom: 60px;
   right: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 180px;
-  height: 60px;
+  width: 120px;
+  height: 41px;
   background-color: rgba(255, 255, 255, 0.01);
   border-radius: 5px;
   box-shadow: 0px 0px 10px #29c7ac;
@@ -511,9 +517,8 @@
 }
 .submit-notification p {
   font-weight: bold;
-  font-size: 1.1rem;
   margin: 0;
-  margin-left: 8px;
+  margin-left: 4px;
 }
 
 .footer-icons {

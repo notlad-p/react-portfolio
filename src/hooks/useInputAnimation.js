@@ -36,6 +36,7 @@ const useInputAnimation = () => {
     onSubmit,
     onFocus,
     onInput,
+    input,
     onInputBlur,
   }
 }

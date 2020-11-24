@@ -89,6 +89,10 @@
 
   &-input {
     height: 60px;
+
+    &:invalid {
+      box-shadow: none;
+    }
   }
 
   &-textarea {
@@ -96,6 +100,10 @@
     padding-top: 20px;
     padding-right: 20px;
     resize: vertical;
+
+    &:invalid {
+      box-shadow: none;
+    }
   }
 
   input:-webkit-autofill,
@@ -113,25 +121,22 @@
 }
 
 .submit-notification {
-  position: fixed;
-  bottom: 100px;
+  position: absolute;
+  bottom: 60px;
   right: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 180px;
-  height: 60px;
+  width: 120px;
+  height: 41px;
   background-color: rgba(255, 255, 255, 0.01);
   border-radius: 5px;
   box-shadow: 0px 0px 10px #29c7ac;
-  //border: 2px solid #29c7ac;
   z-index: 4;
 
   & p {
     font-weight: bold;
-    font-size: 1.1rem;
     margin: 0;
-    margin-left: 8px;
-    //padding: 16px 32px;
+    margin-left: 4px;
   }
 }
