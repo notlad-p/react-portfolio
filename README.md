@@ -1,1 +1,1 @@
-![Logo](https://raw.githubusercontent.com/notlad-p/react-portfolio/blob/master/public/dp-logo-s.png)
+![Logo](https://github.com/notlad-p/react-portfolio/blob/master/public/dp-logo-s.png)
