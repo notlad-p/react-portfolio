@@ -47,11 +47,11 @@ const ProjectModal = ({ isShowing, hide, name, image, projectLink, githubLink })
                 src={image}
                 alt='project'
               />
-              <p 
+              {/* <p 
                 className='project-modal-description' 
               >
                 Detailed description
-              </p>
+              </p> */}
             </div>
             <div className='project-modal-btns' >
               <Button 

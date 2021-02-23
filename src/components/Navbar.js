@@ -2,35 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useSpring, animated, useTrail, useChain, useSprings } from 'react-spring';
 import { House, User, Code, Envelope } from 'phosphor-react';
 import { Link } from 'react-scroll';
-
-// to do:
-  // make logo for nav, app button, & favicon
-
-const useWindowWidth = () => {
-  const getWindowWidth = () => {
-    const { innerWidth: width, } = window;
-
-    return {
-      width,
-    }
-  }
-
-  const [width, setWidth] = useState(getWindowWidth());
-
-  useEffect(() => {
-    const handleWindowResize = () => {
-      setWidth(getWindowWidth());
-    }
-
-    window.addEventListener('resize', handleWindowResize);
-
-    return () => {
-      window.removeEventListener('resize', handleWindowResize);
-    }
-  }, []);
-
-  return width
-}
+import useWindowWidth from '../hooks/useWindowWidth';
 
 export default function Navbar() {
   const [menu, setMenu] = useState(false);
@@ -42,7 +14,7 @@ export default function Navbar() {
     to: async (next) => {
       await next({width: '75px'});
       await next({height: '60px'});
-      await next({opacity: 1})
+      await next({opacity: 1});
     },
     from: {
       height: '0px',
@@ -68,17 +40,17 @@ export default function Navbar() {
       </>,
       to: 'header'
     },
-    {
-      el: <>
-        <User 
-          size={36} 
-          color='#ffffff'
-          className='navbar-icon'
-        />
-        <span></span>
-      </>,
-      to: 'about'
-    },
+    // {
+    //   el: <>
+    //     <User 
+    //       size={36} 
+    //       color='#ffffff'
+    //       className='navbar-icon'
+    //     />
+    //     <span></span>
+    //   </>,
+    //   to: 'about'
+    // },
     {
       el: <>
         <Code 

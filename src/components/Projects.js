@@ -13,21 +13,24 @@ const Project = ({ name, description, tech, githubLink, projectLink, title, imag
   const { isShowing, toggle } = useModal();
 
   return (
-    <div 
+    <a 
       className='project'
-      onClick={toggle}
+      // onClick={toggle}
+      href={githubLink}
+      rel="noopener noreferrer"
+      target='_blank'
       style={{
         backgroundImage: `url(${image})`,
       }}
     >
-      <ProjectModal 
+      {/* <ProjectModal 
         isShowing={isShowing}
         hide={toggle}
         name={name}
         image={image}
         githubLink={githubLink}
         projectLink={projectLink}
-      />
+      /> */}
       <div>
         <p 
           className='paragraph white-text' 
@@ -77,7 +80,7 @@ const Project = ({ name, description, tech, githubLink, projectLink, title, imag
           </a>
         </div>
       </div>
-    </div>
+    </a>
   )
 }
 
@@ -85,7 +88,7 @@ const projectData = [
   {
     id: 1,
     name: 'Rent-a-Car', 
-    description: 'Made up car rental site built in React, using the Material UI component library.', 
+    description: 'Fictional car rental site built in React, using the Material UI component library.', 
     image: rentACar,
     tech: ['React', 'SASS', 'Material UI',], 
     githubLink: 'https://github.com/notlad-p/rent-a-car', 
@@ -94,16 +97,16 @@ const projectData = [
   {
     id: 2,
     name: 'Dash - New Tab Page', 
-    description: 'Chrome new tab page extension with 3D backgrounds, current loaction weather, and time.', 
+    description: 'Chrome new tab page extension with current weather, time, and 3D backgrounds.', 
     image: dash,
-    tech: ['ThreeJS', 'JSON',], 
+    tech: ['VantaJS', 'JSON', 'JavaScript'], 
     githubLink: 'https://github.com/notlad-p/dash', 
-    projectLink: ''
+    projectLink: 'https://dash-browser-extension.netlify.app/'
   },
   {
     id: 3,
     name: 'Pair Matching Game', 
-    description: 'A simple pair matching card game.', 
+    description: 'Sea themed pair matching game using the Fisher Yates shuffle.', 
     image: pairMatching,
     tech: ['JavaScript', 'CSS', 'HTML',], 
     githubLink: 'https://github.com/notlad-p/pair-matching-game', 

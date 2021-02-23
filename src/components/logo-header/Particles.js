@@ -2,11 +2,6 @@ import * as THREE from 'three';
 import React, { useRef, useMemo } from 'react';
 import { useFrame } from 'react-three-fiber';
 
-// Particles
-  // ref: https://codesandbox.io/embed/r3f-sparks-sbf2i
-  // Random locations in a floating motion
-  // Move slightly with mouse
-
 export default function Particles({ count, mouse }) {
   const mesh = useRef();
 
@@ -15,13 +10,9 @@ export default function Particles({ count, mouse }) {
   const particles = useMemo(() => {
     const arr = [];
     for (let i = 0; i < count; i++) {
-      // random x, y, z position
-        // between -3 and 3
-        // Math.random() * 6 - 3
       const x = Math.random() * 6 - 3;
       const y = Math.random() * 6 - 3;
       const z = Math.random() * 6 - 3;
-      // standard speed
       const speed = 0.01 + Math.random() / 200;
       const timing = Math.random() * 100;
       arr.push({x, y, z, speed, timing, mouseX: 0, mouseY: 0});

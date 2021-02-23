@@ -133,3 +133,14 @@ body {
 .hidden {
   display: none;
 }
+
+#about {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  max-width: 500px;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}

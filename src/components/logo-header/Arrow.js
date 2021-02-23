@@ -2,13 +2,16 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { useSpring, a } from 'react-spring/three';
 
+const color = '#4f4e4d';
+
 export default function Arrow() {
   const [hovered, setHovered] = useState(false);
 
   const arrowRef = useRef();
 
-  const { positionY } = useSpring({
+  const { positionY, scale } = useSpring({
     positionY: hovered ? [0, -3.45, 0] : [0, -3.4, 0],
+    scale: hovered ? [.7, .7, .7] : [.6, .6, .6],
   });
 
   const [, setY ] = useSpring(() => ({ y: window.scrollY }));
@@ -38,14 +41,15 @@ export default function Arrow() {
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
       onClick={onClick}
-      scale={[.6, .6, .6]}
+      scale={scale}
     >
       <mesh>
         <cylinderBufferGeometry
           args={[.2, 0, .25, 4]}
         />
         <meshPhysicalMaterial 
-          color='#4F4E4D'
+          // color='#4F4E4D'
+          color={color}
           roughness={1}
           flatShading
         />
@@ -57,7 +61,8 @@ export default function Arrow() {
           args={[.08, .08, .4, 4]}
         />
         <meshPhysicalMaterial 
-          color='#4F4E4D'
+          // color='#4F4E4D'
+          color={color}
           roughness={1}
           flatShading
         />

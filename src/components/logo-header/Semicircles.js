@@ -3,9 +3,7 @@ import { useFrame } from 'react-three-fiber';
 
 const Semicircle = ({ direction, radius, arc, rotation, speed }) => {
   const semiRef = useRef();
-
-  // back and forth motion
-    // https://codesandbox.io/s/r3f-instanced-colors-8fo01?file=/src/index.js
+  
   useFrame(() => {
     semiRef.current.rotation.z += speed * direction;
   });

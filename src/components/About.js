@@ -1,8 +1,11 @@
 import React from 'react';
 import Heading from './Heading';
 import Button from './Button';
+import { Link } from 'react-scroll';
+import useWindowWidth from '../hooks/useWindowWidth';
 
 export default function About() {
+  const { width } = useWindowWidth();
 
   return (
     <div 
@@ -17,11 +20,14 @@ export default function About() {
       <p className='paragraph grey-text' >
         I'm a developer who enjoys building clean and interactive web apps.
       </p>
-      <Button 
-        text='Resume'
-        link
-        href='#'
-      />
+
+      <Link
+        to='projects'
+        smooth={true}
+        offset={width < 800 ? -120 : 0}
+      >
+        <Button text='Projects' />
+      </Link>
     </div>
   )
 }

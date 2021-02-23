@@ -9,8 +9,8 @@ import { Stars } from '@react-three/drei';
 
 const Logo = ({ position, speed }) => {
   const color = '#007acc';
-  const metalness = 0; //1  
-  const roughness = 1; //0.3
+  const metalness = 0; 
+  const roughness = 1;
 
   const logo = useRef();
 
@@ -144,16 +144,16 @@ export default function LogoHeader() {
           penumbra={1}
           castShadow
         />
-        <Logo speed={isMobile ? .01 : .005} />
-        <Semicircles speed={isMobile ? .01125 : .005} />
+        {/* <Logo speed={isMobile ? .01 : .005} /> */}
+        {/* <Semicircles speed={isMobile ? .01125 : .005} /> */}
         <Arrow />
         <Particles 
-          count={isMobile ? 100 : 200} // 200 & 50-75 on mobile 
+          count={isMobile ? 50 : 100}
           mouse={mouse}
         />
-        <Effects mouseDown={mouseDown}   />
+        {/* <Effects mouseDown={mouseDown}   /> */}
         <Stars 
-          count={isMobile ? 500 : 1000} //500 on mobile
+          count={isMobile ? 500 : 1000}
           factor={2}
         />
       </Canvas>

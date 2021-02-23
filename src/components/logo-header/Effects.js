@@ -6,7 +6,7 @@ import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPa
 import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass';
 import { SMAAPass } from 'three/examples/jsm/postprocessing/SMAAPass';
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass'
-import { FXAAShader } from 'three/examples/jsm/shaders/FXAAShader'
+import { FXAAShader } from 'three/examples/jsm/shaders/FXAAShader';
 import { GlitchPass } from '../../post/Glitchpass';
 import { extend, useThree, useFrame } from 'react-three-fiber';
 
