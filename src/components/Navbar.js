@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { useSpring, animated, useTrail, useChain, useSprings } from 'react-spring';
-import { House, User, Code, Envelope } from 'phosphor-react';
+import { House, Code, Envelope } from 'phosphor-react';
 import { Link } from 'react-scroll';
 import useWindowWidth from '../hooks/useWindowWidth';
 
@@ -40,17 +40,6 @@ export default function Navbar() {
       </>,
       to: 'header'
     },
-    // {
-    //   el: <>
-    //     <User 
-    //       size={36} 
-    //       color='#ffffff'
-    //       className='navbar-icon'
-    //     />
-    //     <span></span>
-    //   </>,
-    //   to: 'about'
-    // },
     {
       el: <>
         <Code 

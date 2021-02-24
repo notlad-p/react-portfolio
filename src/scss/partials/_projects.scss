@@ -2,32 +2,14 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  // grid-template-columns: 1fr 1fr;
-  // grid-template-rows: auto;
-  // grid-template-areas: 
-  //   "first first"
-  //   "second third"
-  //   "fourth fourth"
-  // ;
   column-gap: 30px;
   row-gap: 30px;
-
   grid-template-areas: 
    "first"
    "second"
    "third"
    "fourth"
   ;
-  
-
-  // @media screen and (max-width: 1150px) {
-  //   grid-template-areas: 
-  //     "first first"
-  //     "second second"
-  //     "third third"
-  //     "fourth fourth"
-  //   ;
-  // }
 }
 
 .project { 
@@ -103,10 +85,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    // @media screen and (max-width: 400px) {
-    //   margin: 0 8px 20px 8px;
-    // }
 
     @media screen and (max-width: 348px) {
       flex-direction: column-reverse;

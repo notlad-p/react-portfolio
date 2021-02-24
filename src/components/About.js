@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 import useWindowWidth from '../hooks/useWindowWidth';
 
 export default function About() {
-  const { width } = useWindowWidth();
+  const { width } = useWindowWidth(); 
 
   return (
     <div 

@@ -1,7 +1,5 @@
 import React from 'react';
 import Heading from './Heading';
-import ProjectModal from './ProjectModal';
-import useModal from '../hooks/useModal';
 import githubIcon from '../assets/icons/github-white.png';
 import rentACar from '../assets/imgs/projects/rentacar.JPG';
 import pairMatching from '../assets/imgs/projects/pairmatching.JPG';
@@ -10,12 +8,10 @@ import iphoneCalc from '../assets/imgs/projects/iphone-calc.JPG';
 import { Link } from 'phosphor-react';
 
 const Project = ({ name, description, tech, githubLink, projectLink, title, image }) => {
-  const { isShowing, toggle } = useModal();
 
   return (
     <a 
       className='project'
-      // onClick={toggle}
       href={githubLink}
       rel="noopener noreferrer"
       target='_blank'
@@ -23,14 +19,6 @@ const Project = ({ name, description, tech, githubLink, projectLink, title, imag
         backgroundImage: `url(${image})`,
       }}
     >
-      {/* <ProjectModal 
-        isShowing={isShowing}
-        hide={toggle}
-        name={name}
-        image={image}
-        githubLink={githubLink}
-        projectLink={projectLink}
-      /> */}
       <div>
         <p 
           className='paragraph white-text' 
@@ -59,7 +47,6 @@ const Project = ({ name, description, tech, githubLink, projectLink, title, imag
             href={projectLink}
             target='_blank'
             rel="noopener noreferrer"
-            onClick={toggle}
           >
             <Link
              size='28px'
@@ -70,7 +57,6 @@ const Project = ({ name, description, tech, githubLink, projectLink, title, imag
             href={githubLink}
             target='_blank'
             rel="noopener noreferrer"
-            onClick={toggle}
           >
             <img 
               className='project-footer-github-icon'

@@ -31,7 +31,6 @@ export default function Contact() {
     setTimeout(() => {
       setSubmit(false);
     }, 2000);
-    //process.env.REACT_APP_EMAILJS_ID
   }
 
   const transition = useTransition(submit, null, {
