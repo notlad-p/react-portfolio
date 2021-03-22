@@ -1,61 +1,49 @@
-import React from 'react';
-import { Envelope } from 'phosphor-react';
-import githubIcon from '../assets/icons/github-white.png';
-import linkedInIcon from '../assets/icons/linkedin-white.png';
+import React from "react";
+import { Envelope } from "phosphor-react";
+import githubIcon from "../assets/icons/github-white.png";
+import linkedInIcon from "../assets/icons/linkedin-white.png";
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <div 
-      className='section'
-    >
-      <div
-        className='footer-icons'
-      >
+    <div className="section">
+      <div className="footer-icons">
         <a
-          href='mailto:daperkins123@gmail.com'
-          target='_blank'
+          href="mailto:daperkins123@gmail.com"
+          target="_blank"
           rel="noopener noreferrer"
-          className='footer-link'
+          className="footer-link"
         >
-          <Envelope 
-            size='36px'
-            color='rgba(255, 255, 255, 0.87)'
-            className='footer-icon'
+          <Envelope
+            size="36px"
+            color="rgba(255, 255, 255, 0.87)"
+            className="footer-icon"
           />
         </a>
         <a
-          href='https://github.com/notlad-p'
-          target='_blank'
+          href="https://github.com/notlad-p"
+          target="_blank"
           rel="noopener noreferrer"
-          className='footer-link'
+          className="footer-link"
         >
-          <img 
-            src={githubIcon}
-            alt='Github link'
-            className='footer-icon'
-          />
+          <img src={githubIcon} alt="Github link" className="footer-icon" />
         </a>
         <a
-          href='https://github.com/'
-          target='_blank'
+          href="https://www.linkedin.com/in/dalton-perkins-922a27208"
+          target="_blank"
           rel="noopener noreferrer"
-          className='footer-link'
+          className="footer-link"
         >
-          <img 
-            src={linkedInIcon}
-            alt='LinkedIn link'
-            className='footer-icon'
-          />
+          <img src={linkedInIcon} alt="LinkedIn link" className="footer-icon" />
         </a>
       </div>
-      
-      <p className='footer-p'>
+
+      <p className="footer-p">
         Dalton Perkins
-        <span> &copy; </span> 
+        <span> &copy; </span>
         {year}
       </p>
     </div>
-  )
+  );
 }

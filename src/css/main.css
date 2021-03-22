@@ -519,7 +519,10 @@
 
 .footer-icons {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  width: 220px;
+  margin: 0 auto;
 }
 
 .footer-link {
@@ -529,7 +532,6 @@
   align-items: center;
   height: 58px;
   width: 58px;
-  margin-right: 20px;
   box-shadow: 0px 0px 0px 2px #007ACC;
   border-radius: 5px;
   z-index: 1;
@@ -567,6 +569,7 @@
   color: #4F4E4D;
   font-size: 14px;
   text-align: center;
+  margin: 0;
   margin-top: 30px;
 }
 .footer-p span {
