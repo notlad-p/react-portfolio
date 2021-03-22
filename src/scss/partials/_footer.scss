@@ -21,7 +21,7 @@
     outline: none;
     border: none;
   }
-
+ 
   &::before {
     content: '';
     z-index: -1;
@@ -49,12 +49,20 @@
   opacity: 0.87;
 }
 
-.footer-p {
+.footer-a {
   color: #4F4E4D;
   font-size: 14px;
   text-align: center;
   margin: 0;
   margin-top: 30px;
+
+  & a {
+    color: #4F4E4D;
+
+    &:focus {
+      outline: none;
+    }
+  }
 
   & span {
     color: #29C7AC;

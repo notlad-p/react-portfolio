@@ -4,8 +4,6 @@ import githubIcon from "../assets/icons/github-white.png";
 import linkedInIcon from "../assets/icons/linkedin-white.png";
 
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <div className="section">
       <div className="footer-icons">
@@ -39,10 +37,15 @@ export default function Footer() {
         </a>
       </div>
 
-      <p className="footer-p">
-        Dalton Perkins
-        <span> &copy; </span>
-        {year}
+      <p className="footer-a">
+        <a
+          href="https://github.com/notlad-p/react-portfolio"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Built by
+          <span> Dalton Perkins </span>
+        </a>
       </p>
     </div>
   );
