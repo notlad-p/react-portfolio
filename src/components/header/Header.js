@@ -1,11 +1,14 @@
-import React, { useRef, useCallback } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import * as THREE from "three";
 import { Canvas } from "react-three-fiber";
+import { Stars } from "@react-three/drei";
+import Effects from "./Effects";
 import Particles from "./Particles";
 import Arrow from "./Arrow";
-import { Stars } from "@react-three/drei";
 
 export default function LogoHeader() {
+  const [mouseDown, setMouseDown] = useState(false);
+
   const mouse = useRef([0, 0]);
   const onMouseMove = useCallback(
     ({ clientX: x, clientY: y }) =>
@@ -18,9 +21,13 @@ export default function LogoHeader() {
   );
 
   return (
-    <div className="logo-header" id="header">
+    <div className="header">
       <Canvas
         camera={{ position: [0, 0, 5] }}
+        onMouseUp={() => setMouseDown(false)}
+        onMouseDown={() => setMouseDown(true)}
+        onTouchStart={() => setMouseDown(true)}
+        onTouchEnd={() => setMouseDown(false)}
         onMouseMove={onMouseMove}
         onCreated={({ gl }) => {
           gl.shadowMap.enabled = true;
@@ -33,6 +40,7 @@ export default function LogoHeader() {
         <Arrow />
         <Particles count={isMobile ? 50 : 100} mouse={mouse} />
         <Stars count={isMobile ? 500 : 1000} factor={2} />
+        <Effects mouseDown={mouseDown} />
       </Canvas>
     </div>
   );

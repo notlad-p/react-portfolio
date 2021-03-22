@@ -1,6 +1,6 @@
-import * as THREE from 'three';
-import React, { useRef, useMemo } from 'react';
-import { useFrame } from 'react-three-fiber';
+import * as THREE from "three";
+import React, { useRef, useMemo } from "react";
+import { useFrame } from "react-three-fiber";
 
 export default function Particles({ count, mouse }) {
   const mesh = useRef();
@@ -15,7 +15,7 @@ export default function Particles({ count, mouse }) {
       const z = Math.random() * 6 - 3;
       const speed = 0.01 + Math.random() / 200;
       const timing = Math.random() * 100;
-      arr.push({x, y, z, speed, timing, mouseX: 0, mouseY: 0});
+      arr.push({ x, y, z, speed, timing, mouseX: 0, mouseY: 0 });
     }
     return arr;
   }, [count]);
@@ -25,15 +25,19 @@ export default function Particles({ count, mouse }) {
       let { x, y, z, speed, timing } = particle;
 
       // update particle position
-      timing = particle.timing += speed / 8
+      timing = particle.timing += speed / 8;
 
-      particle.mouseX += (mouse.current[0] - particle.mouseX) * .01;
-      particle.mouseY += (-mouse.current[1] - particle.mouseY) * .01;
+      particle.mouseX += (mouse.current[0] - particle.mouseX) * 0.01;
+      particle.mouseY += (-mouse.current[1] - particle.mouseY) * 0.01;
 
       particlesObject.position.set(
-        (x + -Math.cos(timing) * 2) + (particle.mouseX / 10) * (Math.sin(timing) / 20),
-        (y + Math.tan(timing) * 2) + (particle.mouseY / 10) * (Math.sin(timing) / 20),
-        (z + -Math.sin(timing) * 2)
+        x +
+          -Math.cos(timing) * 2 +
+          (particle.mouseX / 10) * (Math.sin(timing) / 20),
+        y +
+          Math.tan(timing) * 2 +
+          (particle.mouseY / 10) * (Math.sin(timing) / 20),
+        z + -Math.sin(timing) * 2
       );
 
       const r = Math.cos(timing) * Math.sin(timing) * 5;
@@ -42,25 +46,19 @@ export default function Particles({ count, mouse }) {
 
       particlesObject.updateMatrix();
 
-      mesh.current.setMatrixAt(index, particlesObject.matrix)
+      mesh.current.setMatrixAt(index, particlesObject.matrix);
     });
 
-    mesh.current.instanceMatrix.needsUpdate = true
+    mesh.current.instanceMatrix.needsUpdate = true;
   });
-  
+
   return (
     <>
       <instancedMesh ref={mesh} args={[null, null, count]}>
-        <dodecahedronBufferGeometry 
-          attach="geometry" 
-          args={[0.025, 0]} 
-        />
-        
-        <meshPhongMaterial 
-          attach="material" 
-          color='#4F4E4D'
-        />
+        <dodecahedronBufferGeometry attach="geometry" args={[0.025, 0]} />
+
+        <meshPhongMaterial attach="material" color="#4F4E4D" />
       </instancedMesh>
     </>
-  )
+  );
 }

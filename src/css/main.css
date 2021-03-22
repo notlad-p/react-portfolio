@@ -585,7 +585,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.logo-header, canvas {
+.header, canvas {
   position: absolute;
   top: 0;
   left: 0;
