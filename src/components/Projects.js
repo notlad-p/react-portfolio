@@ -4,6 +4,7 @@ import githubIcon from "../assets/icons/github-white.png";
 import rentACar from "../assets/imgs/projects/rentacar.JPG";
 import pairMatching from "../assets/imgs/projects/pairmatching.JPG";
 import dash from "../assets/imgs/projects/dash.JPG";
+import dpLogo from '../assets/imgs/projects/dp-logo.png';
 import iphoneCalc from "../assets/imgs/projects/iphone-calc.JPG";
 import { Link } from "phosphor-react";
 
@@ -13,7 +14,6 @@ const Project = ({
   tech,
   githubLink,
   projectLink,
-  title,
   image,
 }) => {
   return (
@@ -80,13 +80,13 @@ const projectData = [
     projectLink: "https://dash-browser-extension.netlify.app/",
   },
   {
-    name: "3D Portfolio Logo",
+    name: "3D Personal Logo",
     description:
-      "3D version of my portfolio logo, originally the header of this portfolio. Beware it is very CPU and GPU intensive.",
-    image: rentACar,
-    tech: ["React", "SASS", "Material UI"],
-    githubLink: "https://github.com/notlad-p/rent-a-car",
-    projectLink: "https://notlad-p.github.io/rent-a-car/",
+      "3D version of my personal logo, originally the header of this portfolio. Beware it is very CPU and GPU intensive.",
+    image: dpLogo,
+    tech: ["React", "React Three Fiber", "Material UI"],
+    githubLink: "https://codesandbox.io/s/dp-logo-1d7cb",
+    projectLink: "https://codesandbox.io/s/dp-logo-1d7cb",
   },
   {
     name: "Pair Matching Game",
