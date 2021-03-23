@@ -1,5 +1,4 @@
-import React, { useRef, useMemo, useEffect } from "react";
-import * as THREE from "three";
+import React, { useRef, useEffect } from "react";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
 import { GlitchPass } from "../../post/Glitchpass";
