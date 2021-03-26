@@ -84,7 +84,7 @@ const projectData = [
     description:
       "3D version of my personal logo, originally the header of this portfolio. Beware it is very CPU and GPU intensive.",
     image: dpLogo,
-    tech: ["React", "React Three Fiber", "Material UI"],
+    tech: ["React", "React Three Fiber"],
     githubLink: "https://codesandbox.io/s/dp-logo-1d7cb",
     projectLink: "https://codesandbox.io/s/dp-logo-1d7cb",
   },
