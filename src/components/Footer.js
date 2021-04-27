@@ -8,7 +8,7 @@ export default function Footer() {
     <div className="section">
       <div className="footer-icons">
         <a
-          href="mailto:daperkins123@gmail.com"
+          href="mailto:contact@daltonp.dev"
           target="_blank"
           rel="noopener noreferrer"
           className="footer-link"
